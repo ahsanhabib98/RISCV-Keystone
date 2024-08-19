@@ -3,7 +3,7 @@ From https://github.com/RamyaBoggaram/VGG16-baremetal-RISCV-AND-QEMU
 
 These are the steps to build vgg16 in baremetal RISCV and QEMU configurations. To build the toolchains in local machines follow [these instructions](../../baremetal-setup.md)
 # 1. Build baremetal binary
-Build the VGG16 binary using the files in [this folder](VGG16-in-baremetal)
+Build the VGG16 binary using the files in [the VGG16-in-baremetal folder](VGG16-in-baremetal)
 ```
 cd directory_name
 make
