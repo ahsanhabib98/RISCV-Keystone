@@ -10,5 +10,5 @@ Once the keystone environment is built, these experiments can be run in the keys
 # [Baremetal RISC-V Environment Setup](baremetal/baremetal-setup.md)
 Follow [these instructions](baremetal/baremetal-setup.md) to set up a baremetal environment that can run experiments in a RISC-V environment.
 
-## [Baremetal Environment Experiments](baremetal/baremetal-setup.md)
+## [Baremetal Environment Experiments](baremetal/baremetal-experiments)
 Once the baremetal environment is set up, these experiments can be run in the baremetal environment.
