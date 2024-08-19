@@ -1,5 +1,5 @@
 # Running TinyNN in keystone environment
-These are the steps to build TinyNN in keystone which is non docker but having docker configurations. To setup the keystone environment in local machine follow: https://github.com/RamyaBoggaram/Keystone-with-Docker-configurations-as-non-docker
+These are the steps to build TinyNN in keystone which is non docker but having docker configurations. To setup the keystone environment in local machine follow [these instructions](../../keystone-setup.md)
 
 
 # 1. Copy the code
