@@ -77,10 +77,10 @@ Network::Network()
 	
 	ocall_print_buffer("Initializing Network 1...\n");
 	
-	m_Readdata = new ReadData(1, 128, 128, 3);
+	m_Readdata = new ReadData(1, 224, 224, 3);
 	
 	// First Layer
-	m_Layers_bn = new Layers_Bn(3, 22, 128, 2, 1);  // Reduced from 32 to 22 (32 / sqrt(2))
+	m_Layers_bn = new Layers_Bn(3, 22, 224, 2, 1);  // Reduced from 32 to 22 (32 / sqrt(2))
 	
 	ocall_print_buffer("Initializing Network 1 Done...\n");
 	

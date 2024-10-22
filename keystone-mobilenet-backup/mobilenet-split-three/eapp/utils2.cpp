@@ -108,7 +108,7 @@ float* getInput(AES_ctx* ctx, size_t inputSize)
 void test()
 {
   Network network;
-  size_t inputSize = 90112;
+  size_t inputSize = 275968;
   
   struct AES_ctx ctx;
 	AES_init_ctx_iv(&ctx, key, iv);

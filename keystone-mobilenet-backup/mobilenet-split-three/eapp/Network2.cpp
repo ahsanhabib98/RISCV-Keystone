@@ -89,30 +89,30 @@ Network::Network()
 	ocall_print_buffer("Initializing Network 2...\n");
 
 	// Second Layer
-	m_Layers_ds2_1 = new Layers_Ds(22, 45, 64, 1, 211, 212);  // Reduced from 32 -> 64 to 22 -> 45
-	m_Layers_ds2_2 = new Layers_Ds(45, 90, 64, 2, 221, 222);  // Reduced from 64 -> 128 to 45 -> 90
+	m_Layers_ds2_1 = new Layers_Ds(22, 45, 112, 1, 211, 212);  // Reduced from 32 -> 64 to 22 -> 45
+	m_Layers_ds2_2 = new Layers_Ds(45, 90, 112, 2, 221, 222);  // Reduced from 64 -> 128 to 45 -> 90
 
 	// Third Layer
-	m_Layers_ds3_1 = new Layers_Ds(90, 90, 32, 1, 311, 312);  // Reduced from 128 -> 128 to 90 -> 90
-	m_Layers_ds3_2 = new Layers_Ds(90, 180, 32, 2, 321, 322);  // Reduced from 128 -> 256 to 90 -> 180
+	m_Layers_ds3_1 = new Layers_Ds(90, 90, 56, 1, 311, 312);  // Reduced from 128 -> 128 to 90 -> 90
+	m_Layers_ds3_2 = new Layers_Ds(90, 180, 56, 2, 321, 322);  // Reduced from 128 -> 256 to 90 -> 180
 
 	// Fourth Layer
-	m_Layers_ds4_1 = new Layers_Ds(180, 180, 16, 1, 411, 412);  // Reduced from 256 -> 256 to 180 -> 180
-	m_Layers_ds4_2 = new Layers_Ds(180, 360, 16, 2, 421, 422);  // Reduced from 256 -> 512 to 180 -> 360
+	m_Layers_ds4_1 = new Layers_Ds(180, 180, 28, 1, 411, 412);  // Reduced from 256 -> 256 to 180 -> 180
+	m_Layers_ds4_2 = new Layers_Ds(180, 360, 28, 2, 421, 422);  // Reduced from 256 -> 512 to 180 -> 360
 	
 	// Fifth Layer
-	m_Layers_ds5_1 = new Layers_Ds(360, 360, 8, 1, 511, 512);  // Reduced from 512 -> 512 to 360 -> 360
-	m_Layers_ds5_2 = new Layers_Ds(360, 360, 8, 1, 521, 522);  // Reduced from 512 -> 512 to 360 -> 360
-	m_Layers_ds5_3 = new Layers_Ds(360, 360, 8, 1, 531, 532);  // Reduced from 512 -> 512 to 360 -> 360
-	m_Layers_ds5_4 = new Layers_Ds(360, 360, 8, 1, 541, 542);  // Reduced from 512 -> 512 to 360 -> 360
-	m_Layers_ds5_5 = new Layers_Ds(360, 360, 8, 1, 551, 552);  // Reduced from 512 -> 512 to 360 -> 360
-	m_Layers_ds5_6 = new Layers_Ds(360, 720, 8, 2, 561, 562);  // Reduced from 512 -> 1024 to 360 -> 720
+	m_Layers_ds5_1 = new Layers_Ds(360, 360, 14, 1, 511, 512);  // Reduced from 512 -> 512 to 360 -> 360
+	m_Layers_ds5_2 = new Layers_Ds(360, 360, 14, 1, 521, 522);  // Reduced from 512 -> 512 to 360 -> 360
+	m_Layers_ds5_3 = new Layers_Ds(360, 360, 14, 1, 531, 532);  // Reduced from 512 -> 512 to 360 -> 360
+	m_Layers_ds5_4 = new Layers_Ds(360, 360, 14, 1, 541, 542);  // Reduced from 512 -> 512 to 360 -> 360
+	m_Layers_ds5_5 = new Layers_Ds(360, 360, 14, 1, 551, 552);  // Reduced from 512 -> 512 to 360 -> 360
+	m_Layers_ds5_6 = new Layers_Ds(360, 720, 14, 2, 561, 562);  // Reduced from 512 -> 1024 to 360 -> 720
 	
 	// Sixth Layer
-	m_Layers_ds6 = new Layers_Ds(720, 720, 4, 1, 61, 62);  // Reduced from 1024 -> 1024 to 720 -> 720
+	m_Layers_ds6 = new Layers_Ds(720, 720, 7, 1, 61, 62);  // Reduced from 1024 -> 1024 to 720 -> 720
 
 	// Global Pooling Layer
-	m_Poollayer6 = new GlobalPoolLayer(720, 4);  // Reduced from 1024 to 720
+	m_Poollayer6 = new GlobalPoolLayer(720, 7);  // Reduced from 1024 to 720
 	
 	ocall_print_buffer("Initializing Network 2 Done...\n");
 	

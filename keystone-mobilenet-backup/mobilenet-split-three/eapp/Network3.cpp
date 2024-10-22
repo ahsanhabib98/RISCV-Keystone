@@ -86,7 +86,7 @@ Network::Network()
 	ocall_print_buffer("Initializing Network 3...\n");
 
 	// Fully Connected Layer
-	m_Fclayer7 = new FcLayer(4, 720, 12);  // Reduced from 1024 to 720
+	m_Fclayer7 = new FcLayer(7, 720, 12);  // Reduced from 1024 to 720
 	
 	// Sigmoid Layer
 	m_Sigmoidlayer8 = new SigmoidLayer(12);
