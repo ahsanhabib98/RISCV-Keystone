@@ -49,17 +49,9 @@ void BatchNormalLayer::ReadParam(int fileNum)
   nFsize = m_nInputNum;
   nBsize = m_nInputNum;
 
-  std::cout << "batch2" << std::endl;
-  std::cout << fileNum << std::endl;
-  std::cout << nMsize << std::endl;
-  std::cout << nVsize << std::endl;
-  std::cout << nFsize << std::endl;
-  std::cout << nBsize << std::endl;
-
 	switch(fileNum)
 	{
 	case(211):
-	std::cout << "case working" << std::endl;
 	m_pfMean = new float[nMsize] {0, 0.00872538, -0.000288668, -0.000975977, 0.102317, 0.000424101, -0.0199794, -0.0458747, 1.12746e-12, -5.89664e-14, 
 7.48195e-14, 0.027605, -0.0424945, 1.2196e-14, -9.27599e-14, -0.00149198 };
 	m_pfVar = new float[nVsize] {0, 0.169938, 0.0389601, 0.00686932, 0.0223671, 0.0130699, 0.215325, 0.0340048, 1.72939e-24, 6.92849e-27, 

@@ -109,9 +109,6 @@ float *ReadData::ReadInput(int imgNum)
 void ReadData::ReadMean(int fileNum)
 {
 	int nMsize = m_nInputSize;
-
-	std::cout << "readdata1" << std::endl;
-	std::cout << nMsize << std::endl;
 	
 	m_pfMean = new float[nMsize] { 122.257, 122.488, 122.976, 123.192, 123.525, 123.549, 123.963, 124.128, 124.483, 124.644, 
 124.922, 124.944, 125.295, 125.476, 125.844, 125.84, 126.198, 126.045, 126.415, 126.558, 

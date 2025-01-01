@@ -51,10 +51,6 @@ void FcLayer::ReadFcWb(int fileNum)
     nWsize = m_nWeightSize;
     nBsize = m_nOutputSize;
 
-    std::cout << "fclayer3" << std::endl;
-    std::cout << nWsize << std::endl;
-    std::cout << nBsize << std::endl;
-
 	if(fileNum == 7)
 	{
 	m_pfWeight = new float[nWsize] {0.037193, -0.000229655, -0.233361, -0.0968091, -0.0826449, -0.0941377, -0.00539747, 0.116531, 0.0725917, -0.10351, 

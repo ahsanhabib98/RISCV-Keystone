@@ -49,12 +49,6 @@ void BatchNormalLayer::ReadParam(int fileNum)
   nFsize = m_nInputNum;
   nBsize = m_nInputNum;
 
-  std::cout << "batch1" << std::endl;
-  std::cout << nMsize << std::endl;
-  std::cout << nVsize << std::endl;
-  std::cout << nFsize << std::endl;
-  std::cout << nBsize << std::endl;
-
 	switch(fileNum)
 	{
 	case(1):

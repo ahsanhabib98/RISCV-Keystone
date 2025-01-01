@@ -264,7 +264,7 @@ int main(int argc, char** argv)
   {
     // Second child process
     Network network2;
-    size_t inputSize = 275968;
+    size_t inputSize = 200704;
 	float* inputData = get_host_string_wrapper12(inputSize);
 	float* network2_output = network2.Forward(inputData);
 	free(inputData);

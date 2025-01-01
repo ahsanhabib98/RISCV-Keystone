@@ -86,8 +86,6 @@ void ConvLayer::forward(float *pfInput)
 void ConvLayer::ReadConvWb1()
 {
 	int nWsize = m_nOutputNum * m_nInputGroupNum * m_nKernelSize;
-    std::cout << "convLayer1  " << std::endl;
-    std::cout << nWsize << std::endl;
 	m_pfWeight = new float[nWsize] {-8.78032e-07, -7.4436e-07, 3.63354e-07, -3.3522e-07, -5.29953e-07, 1.6597e-08, -1.17232e-06, -1.2506e-06, -1.0064e-06, -7.52674e-07, 
 -3.25939e-07, 3.51299e-07, -1.11822e-07, -5.27427e-07, -3.47994e-07, 2.27993e-08, -1.27595e-06, -8.65585e-07, -6.0626e-07, -3.36897e-07, 
 -3.63011e-08, -5.87131e-07, -7.0969e-07, -9.57949e-08, 8.56798e-09, -5.26638e-07, -5.11375e-07, 0.00886196, 0.0357769, -0.00778829, 
