@@ -85,7 +85,7 @@ void test(const char *pcTestListFile, const char *pcTestLabelsFile, const char *
     cout << "accuracy_1:" << fAccurSum_1 << endl;
     cout << "accuracy_all:" << fAccurSum_all << endl;
 
-    network.Forward("data/images/1.png");
+    // network.Forward("data/images/1.png");
 
     // system("pause");
 	

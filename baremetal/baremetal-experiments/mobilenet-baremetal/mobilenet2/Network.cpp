@@ -1,5 +1,6 @@
 ﻿#include "Network.h"
 #include <vector>
+#include <chrono>
 #include <iostream>
 #include <string>
 
@@ -8,7 +9,7 @@ using namespace std;
 Network::Network()
 {
 
-	cout << "Initializing Network..." << endl;
+	auto start2 = std::chrono::high_resolution_clock::now();
 
 	m_Readdata = new ReadData("wbdata/means", 224, 224, 3);
 
@@ -88,8 +89,10 @@ Network::Network()
 	m_vcClass.push_back("夜景");
 	m_vcClass.push_back("文本");
 
-	cout << "Initializing Done..." << endl;
-	cout << endl;
+	auto end2 = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed2 = end2 - start2;
+
+    std::cout << "Model init time: " << elapsed2.count() << " seconds" << std::endl;
 
 }
 
@@ -121,6 +124,7 @@ Network::~Network()
 
 float *Network::Forward(const char *pcName)
 {
+    auto start3 = std::chrono::high_resolution_clock::now();
 
     m_Layers_bn->forward(m_Readdata->ReadInput(pcName));
 
@@ -168,6 +172,11 @@ float *Network::Forward(const char *pcName)
 		cout << Max[i] << ": " << argmax[i] << ": " << m_vcClass[argmax[i]] << endl;
 	}
 	cout << endl;
+
+    auto end3 = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed3 = end3 - start3;
+
+    std::cout << "Model inference time: " << elapsed3.count() << " seconds" << std::endl;
     
     return pfOutput;
 }
