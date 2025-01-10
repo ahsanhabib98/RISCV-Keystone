@@ -201,9 +201,10 @@ char attestNonce[2048];
 
 int main(int argc, char** argv) 
 {
-	auto start = std::chrono::high_resolution_clock::now();
+  print_time("Host Init Start");
+  auto start = std::chrono::high_resolution_clock::now();
 	
-	// Get the current time point from the system clock
+  // Get the current time point from the system clock
   auto now = std::chrono::system_clock::now();
   
   // Convert the time point to a time_t which represents the time in seconds
@@ -333,7 +334,7 @@ void send_input_data() {
     std::cout << "Reading input data" << std::endl;
 
     // Construct the filename for the image
-    std::string filename = "1.png";
+    std::string filename = "2.png";
 
     // Variables to hold image width, height, and number of channels
     int width, height, channels;
@@ -363,6 +364,8 @@ void send_input_data() {
 
     // Free the image memory
     stbi_image_free(image);
+
+	print_time("Host Init End");
 
     // Encryption and sending logic
     std::cout << "Sending input..." << std::endl;
