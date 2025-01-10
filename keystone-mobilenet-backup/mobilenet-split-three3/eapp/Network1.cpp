@@ -120,13 +120,13 @@ void Network::Forward()
 	
 	size_t bytesToWrite = m_Layers_bn->GetOutputSize() * sizeof(float);
 	
-	uint8_t inputBuf[2032];
+	uint8_t inputBuf[2048];
 	size_t offset = 0;
 	
 	while(bytesToWrite > 0) 
 	{
 		//write 2032 bytes or whatever is left
-		size_t chunkSize = (bytesToWrite > 2032) ? 2032 : bytesToWrite;
+		size_t chunkSize = (bytesToWrite > 2048) ? 2048 : bytesToWrite;
 		
 		memcpy(inputBuf, reinterpret_cast<uint8_t*>(m_pfOutput) + offset, chunkSize);
 		
