@@ -128,6 +128,11 @@ float *Network::Forward(const char *pcName)
 
     m_Layers_bn->forward(m_Readdata->ReadInput(pcName));
 
+    auto endInput = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsedInput = endInput - start3;
+
+    std::cout << "Input transmission time: " << elapsedInput.count() << " seconds" << std::endl;
+
     m_Layers_ds2_1->forward(m_Layers_bn->GetOutput());
     m_Layers_ds2_2->forward(m_Layers_ds2_1->GetOutput());
     
@@ -173,7 +178,7 @@ float *Network::Forward(const char *pcName)
 	}
 	cout << endl;
 
-     auto end3 = std::chrono::high_resolution_clock::now();
+    auto end3 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed3 = end3 - start3;
 
     std::cout << "Model inference time: " << elapsed3.count() << " seconds" << std::endl;
