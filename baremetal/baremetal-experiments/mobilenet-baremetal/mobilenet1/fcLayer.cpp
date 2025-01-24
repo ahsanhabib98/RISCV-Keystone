@@ -55,7 +55,7 @@ void FcLayer::forward(float *pfInput)
 				//cout << m_pcWname << endl;
 			}
         */
-        std::cout << "fsum " << fsum << std::endl;
+        std::cout << "fsum " << fSum << std::endl;
         m_pfOutput[i] = fSum;
     }
 }
