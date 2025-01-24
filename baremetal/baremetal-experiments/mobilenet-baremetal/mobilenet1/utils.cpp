@@ -55,11 +55,12 @@ void test(const char *pcTestListFile, const char *pcTestLabelsFile, const char *
     float fAccuracy_all = 0.0;
 
     int i = 0;
-
+    std::cout << "befor while" << std::endl;
     if (file && lab)
     {
         while (getline(file, line) && getline(lab, label))
         {
+            std::cout << "after while" << std::endl;
             filename = filepath + line;
             file_name = filename.c_str();
             pfPredict = network.Forward(file_name);
