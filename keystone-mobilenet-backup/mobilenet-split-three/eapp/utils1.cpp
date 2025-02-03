@@ -63,12 +63,12 @@ void test()
 		network.Forward();
 		ocall_wait_for_finish("Test 1 End");
 		
-		ocall_time("Test 2 Start\n");
-		network.Forward();
-		ocall_wait_for_finish("Test 2 End");
+		// ocall_time("Test 2 Start\n");
+		// network.Forward();
+		// ocall_wait_for_finish("Test 2 End");
 		
-		ocall_time("Test 3 Start\n");
-		network.Forward();
+		// ocall_time("Test 3 Start\n");
+		// network.Forward();
 		
  		return;
 }

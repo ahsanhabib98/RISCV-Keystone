@@ -116,12 +116,12 @@ void test()
 	network.Forward(getInput(&ctx, inputSize));
 	ocall_wait_for_finish("Test 1\n");
 	
-	AES_init_ctx_iv(&ctx, key, iv);
-	network.Forward(getInput(&ctx, inputSize));
-	ocall_wait_for_finish("Test 2\n");
+	// AES_init_ctx_iv(&ctx, key, iv);
+	// network.Forward(getInput(&ctx, inputSize));
+	// ocall_wait_for_finish("Test 2\n");
 	
-	AES_init_ctx_iv(&ctx, key, iv);
-	network.Forward(getInput(&ctx, inputSize));
+	// AES_init_ctx_iv(&ctx, key, iv);
+	// network.Forward(getInput(&ctx, inputSize));
 	
 	return;
 }
