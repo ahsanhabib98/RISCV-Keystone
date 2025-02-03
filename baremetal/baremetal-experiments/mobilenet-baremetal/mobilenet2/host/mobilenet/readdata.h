@@ -5,10 +5,10 @@
 class ReadData
 {
 public:
-	ReadData(const char *pcMean, int nInputWidth, int nInputHeight, int nInputChannel);
+	ReadData(int fileNum, int nInputWidth, int nInputHeight, int nInputChannel);
 	~ReadData();
-	float *ReadInput(const char *pcName);
-	void ReadMean(const char *pcMean);
+	float *ReadInput(int imgNum);
+	void ReadMean(int fileNum);
 
 private:
 	int m_nInputSize, m_nInputWidth, m_nInputHeight, m_nInputChannel, m_nImageSize;

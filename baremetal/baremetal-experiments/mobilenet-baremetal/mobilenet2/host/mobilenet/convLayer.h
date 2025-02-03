@@ -5,13 +5,16 @@
 class ConvLayer
 {
 public:
-    ConvLayer(const char *pcWname, int nInputNum, int nOutputNum, int nInputWidth, int nKernelWidth, int nPad, int nStride=1, int nGroup=1, const char *pcBname = NULL);
+    //ConvLayer(const char *pcWname, int nInputNum, int nOutputNum, int nInputWidth, int nKernelWidth, int nPad, int nStride=1, int nGroup=1, const char *pcBname = NULL);
+    ConvLayer(int weightName, int nInputNum, int nOutputNum, int nInputWidth, int nKernelWidth, int nPad, int nStride=1, int nGroup=1, int biasName = -1);
     ~ConvLayer();
     void forward(float *pfInput);
     float *GetOutput();
-    void ReadConvWb(const char *pcWname, const char *pcBname);
+    //void ReadConvWb(const char *pcWname, const char *pcBname);
+    //void ReadConvWb(int weightName, int biasName);
 	void Addpad(float *pfInput);
     int GetOutputSize();
+    void ReadConvWb();
     
 private:
     int m_nInputNum, m_nOutputNum, m_nInputWidth, m_nKernelWidth, m_nPad, m_nStride, m_nGroup, m_nInputGroupNum, m_nOutputGroupNum;

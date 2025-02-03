@@ -14,7 +14,7 @@
 class Layers_Bn
 {
 public:
-    Layers_Bn(int nInputNum, int nOutputNum, int nInputWidth, int nStride, const char *pcConvDwWname, const char *pcDwBnMname, const char *pcDwBnVname, const char *pcDwBnFname, const char *pcDwBnBname);
+    Layers_Bn(int nInputNum, int nOutputNum, int nInputWidth, int nStride, int fileNum);
     ~Layers_Bn();
     void forward(float *pfInput);
     float *GetOutput();

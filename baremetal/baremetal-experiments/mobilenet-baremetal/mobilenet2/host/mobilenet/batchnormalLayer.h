@@ -4,12 +4,12 @@
 class BatchNormalLayer
 {
 public:
-    BatchNormalLayer(const char *pcMname, const char *pcVname, const char *pcFname, const char *pcBname, int nInputNum, int nInputWidth);
+    BatchNormalLayer(int fileNum, int nInputNum, int nInputWidth);
     ~BatchNormalLayer();
     void forward(float *pfInput);
     float *GetOutput();
     int GetOutputSize();
-    void ReadParam(const char *pcMname, const char *pcVname, const char *pcFname, const char *pcBname);
+    void ReadParam(int fileNum);
 
 private:
     float m_fScale;
