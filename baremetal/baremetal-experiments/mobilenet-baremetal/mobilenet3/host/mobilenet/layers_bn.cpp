@@ -1,9 +1,9 @@
 #include "layers_bn.h"
 
-Layers_Bn::Layers_Bn(int nInputNum, int nOutputNum, int nInputWidth, int nStride, const char *pcConvDwWname, const char *pcDwBnMname, const char *pcDwBnVname, const char *pcDwBnFname, const char *pcDwBnBname)
+Layers_Bn::Layers_Bn(int nInputNum, int nOutputNum, int nInputWidth, int nStride, int fileNum)
 {
-    m_ConvlayerDw = new ConvLayer(pcConvDwWname, nInputNum, nOutputNum, nInputWidth, 3, 1, nStride);
-    m_ConvDwBN = new BatchNormalLayer(pcDwBnMname, pcDwBnVname, pcDwBnFname, pcDwBnBname, nOutputNum, nInputWidth / nStride);
+    m_ConvlayerDw = new ConvLayer(fileNum, nInputNum, nOutputNum, nInputWidth, 3, 1, nStride);
+    m_ConvDwBN = new BatchNormalLayer(fileNum, nOutputNum, nInputWidth / nStride);
     m_RelulayerDw = new ReluLayer(m_ConvDwBN->GetOutputSize());
 }
 

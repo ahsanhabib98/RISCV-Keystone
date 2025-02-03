@@ -22,7 +22,7 @@ public:
     Network();
     ~Network();
 
-    float *Forward(const char *pcName);
+    float *Forward();
     
 
 private:

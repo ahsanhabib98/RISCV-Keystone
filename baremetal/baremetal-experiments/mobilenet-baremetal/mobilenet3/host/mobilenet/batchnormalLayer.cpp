@@ -5,11 +5,11 @@
 #include <cstring>
 #include <fstream>
 #include <cassert>
-#include <cmath> //vs²»ÐèÒªÕâ¸ö£¬g++ÐèÒªÕâ¸ö
+#include <cmath> //vsï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½g++ï¿½ï¿½Òªï¿½ï¿½ï¿½
 
 using namespace std;
 
-BatchNormalLayer::BatchNormalLayer(const char *pcMname, const char *pcVname, const char *pcFname, const char *pcBname, int nInputNum, int nInputWidth) :
+BatchNormalLayer::BatchNormalLayer(int fileNum, int nInputNum, int nInputWidth) :
     m_nInputNum(nInputNum), m_nInputWidth(nInputWidth)
 {
     m_nInputSize = m_nInputWidth * m_nInputWidth;
@@ -18,7 +18,7 @@ BatchNormalLayer::BatchNormalLayer(const char *pcMname, const char *pcVname, con
     m_pfVar = new float[m_nInputNum];
     m_pfFiller = new float[m_nInputNum];
     m_pfBias = new float[m_nInputNum];
-    ReadParam(pcMname, pcVname, pcFname, pcBname);
+    ReadParam(fileNum);
 }
 
 BatchNormalLayer::~BatchNormalLayer()
@@ -44,42 +44,24 @@ void BatchNormalLayer::forward(float *pfInput)
     }
 }
 
-void BatchNormalLayer::ReadParam(const char *pcMname, const char *pcVname, const char *pcFname, const char *pcBname)
+void BatchNormalLayer::ReadParam(int fileNum)
 {
     int nMsize, nVsize, nFsize, nBsize, nMreadsize, nVreadsize, nFreadsize, nBreadsize;
-    FILE *pM, *pV, *pF, *pB;
-    pM = fopen(pcMname, "rb");
-    pV = fopen(pcVname, "rb");
-    pF = fopen(pcFname, "rb");
-    pB = fopen(pcBname, "rb");
-
-    assert((pM != NULL) && (pV != NULL) && (pF != NULL) && (pB != NULL));
 
     nMsize = m_nInputNum;
     nVsize = m_nInputNum;
     nFsize = m_nInputNum;
     nBsize = m_nInputNum;
 
-    nMreadsize = fread(m_pfMean, sizeof(float), nMsize, pM);
-    assert(nMreadsize <= nMsize);
-
-    fclose(pM);
-    cout << "mean: " << nMreadsize << ", ";
-
-    nVreadsize = fread(m_pfVar, sizeof(float), nVsize, pV);
-    assert(nVreadsize <= nVsize);
-
-    cout << "variance: " << nVreadsize << ", ";
-
-    nFreadsize = fread(m_pfFiller, sizeof(float), nFsize, pF);
-    assert(nFreadsize <= nFsize);
-
-    cout << "filler: " << nFreadsize << ", ";
-
-    nBreadsize = fread(m_pfBias, sizeof(float), nBsize, pB);
-    assert(nBreadsize <= nBsize);
-
-    cout << "bias_filler: " << nBreadsize << endl;
+    switch(fileNum)
+	{
+	case(1):
+	m_pfMean = new float[nMsize] {-5.15257e-07, -0.0405053, 0.00492582, 0.0669159, -0.136017, 0.000818472, -0.0590174, 0.0439983 };
+	m_pfVar = new float[nVsize] {7.22756e-07, 13515.8, 845.159, 2829.88, 10725.1, 621.258, 18912.9, 9609.89 };
+	m_pfFiller = new float[nFsize] {-5.15257e-07, -0.0405053, 0.00492582, 0.0669159, -0.136017, 0.000818472, -0.0590174, 0.0439983 };
+	m_pfBias = new float[nBsize] {-3.64502e-06, 0.682912, 0.416179, 0.443006, 0.273728, 0.432146, 0.753429, 0.47652 };
+	break;
+	}
 
 }
 

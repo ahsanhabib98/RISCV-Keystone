@@ -1,5 +1,5 @@
 #include "utils.h"
-#include "Network.h"
+#include "Network.cpp"
 #include <string>
 #include <fstream>
 
@@ -36,16 +36,9 @@ float Accuracy_all(float *pfPred, int *pnLab, int nclass)
     return flag;
 }
 
-void test(const char *pcTestListFile, const char *pcTestLabelsFile, const char *pcTestImageSet)
+void test()
 {
     Network network;
-
-    ifstream file(pcTestListFile);   //name list of test images
-    ifstream lab(pcTestLabelsFile);  //label list of test image
-    string filename;
-    const char *file_name;
-    string line, label;
-    string filepath = pcTestImageSet;  //paht of image data
 
     int nNum = 3618, nClass = 12;
     float *pfPredict;
@@ -53,30 +46,16 @@ void test(const char *pcTestListFile, const char *pcTestLabelsFile, const char *
 
     float fAccuracy_1 = 0.0;
     float fAccuracy_all = 0.0;
+    int i = 1;
+    string label;
 
-    int i = 0;
+    pfPredict = network.Forward();
+    for (int j = 0; j < 12; j++)
+        nLl[j] = label[2 * j] - '0'; 
+    fAccuracy_1 += Accuracy_1(pfPredict, nLl, nClass);
 
-    if (file && lab)
-    {
-        while (getline(file, line) && getline(lab, label))
-        {
-            filename = filepath + line;
-            file_name = filename.c_str();
-            pfPredict = network.Forward(file_name);
-            for (int j = 0; j < 12; j++)
-                nLl[j] = label[2 * j] - '0'; 
-            fAccuracy_1 += Accuracy_1(pfPredict, nLl, nClass);
-
-            fAccuracy_all += Accuracy_all(pfPredict, nLl, nClass);
-            i += 1;
-
-        }
-    }
-    else
-    {
-        cout << "no such file" << endl;
-    }
-
+    fAccuracy_all += Accuracy_all(pfPredict, nLl, nClass);
+    
     cout << "i:" << i << endl;
 
     float fAccurSum_1 = fAccuracy_1 / i;

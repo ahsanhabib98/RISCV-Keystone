@@ -14,8 +14,9 @@
 class Layers_Ds
 {
 public:
-    Layers_Ds(int nInputNum, int nOutputNum, int nInputWidth, int nStride, const char *pcConvDwWname, const char *pcDwBnMname, const char *pcDwBnVname, const char *pcDwBnFname, const char *pcDwBnBname,
-        const char *pcConvSepWname, const char *pcSepBnMname, const char *pcSepBnVname, const char *pcSepBnFname, const char *pcSepBnBname);
+    /*Layers_Ds(int nInputNum, int nOutputNum, int nInputWidth, int nStride, const char *pcConvDwWname, const char *pcDwBnMname, const char *pcDwBnVname, const char *pcDwBnFname, const char *pcDwBnBname,
+        const char *pcConvSepWname, const char *pcSepBnMname, const char *pcSepBnVname, const char *pcSepBnFname, const char *pcSepBnBname);*/
+      Layers_Ds(int nInputNum, int nOutputNum, int nInputWidth, int nStride, int fileNum1, int fileNum2);
     ~Layers_Ds();
     void forward(float *pfInput);
     float *GetOutput();
